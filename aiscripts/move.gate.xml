@@ -1,11 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='this.ship.distanceto.{$gate} gt 5km + (this.ship.size / 2.0)']/get_safe_pos[@value='position.[$randomoffsetx, $randomoffsety, -5km + (this.ship.size / 2.0)]']/@angle">40deg</replace>
-  <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='this.ship.distanceto.{$gate} gt 5km + (this.ship.size / 2.0)']/get_safe_pos[@value='position.[$randomoffsetx, $randomoffsety, 5km - (this.ship.size / 2.0)]']/@angle">40deg</replace>
-  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='not $success']/do_if[@value='not $success']/do_if[@value='not $queuestarttime?']/set_value[@name='$maxtime'][@min='5min'][@max='10min']/@min">if (this.ship.primarypurpose == purpose.fight) then 15s else 3min</replace>
-  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='not $success']/do_if[@value='not $success']/do_if[@value='not $queuestarttime?']/set_value[@name='$maxtime'][@min='if (this.ship.primarypurpose == purpose.fight) then 15s else 3min'][@max='10min']/@max">if (this.ship.primarypurpose == purpose.fight) then 30s else 6min</replace>
-  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='not $success']/do_if[@value='not $success']/wait[@min='5s'][@max='10s']/@max">8s</replace>
-  <add sel="/aiscript/attention[@min='unknown']/actions/move_to[@sinceversion='5']" type="@travel">true</add>
   <replace sel="/aiscript/attention[@min='unknown']/actions/move_to[@destination='$gatedestination'][@abortpath='false']/@finishonapproach">true</replace>
   <add sel="/aiscript/attention[@min='unknown']/actions/move_to[@destination='$gatedestination'][@abortpath='false']" type="@travel">true</add>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/move_to[@destination='$gatedestination'][@abortpath='false']/interrupt_after_time/@time">20s</replace>
 </diff>

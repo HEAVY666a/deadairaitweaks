@@ -7,5 +7,4 @@
   <replace sel="/aiscript/order[@id='MiningRoutine'][@name='{1041, 341}']/params/param[@name='effectiveskill']/@default">100</replace>
   <replace sel="/aiscript/init/do_if[@value='this.isplayerowned']/set_value[@name='$maxrange'][@exact='[@this.assignedcontrolled.commander.tradenpc.skill.management, @this.skill.piloting].max / 3']/@exact">[([@this.ship.commander.tradenpc.skill.management, @this.ship.commander.pilot.skill.management, @this.ship.pilot.skill.piloting].max),12].max</replace>
   <remove sel="/aiscript/init/do_if[@value='this.isplayerowned']/do_if[@value='$effectiveskill == 100']"/>
-  <replace sel="/aiscript/patch[@sinceversion='3']/do_if[@value='this.isplayerowned']/set_value[@name='$maxrange'][@exact='[@this.assignedcontrolled.commander.tradenpc.skill.management, @this.assignedcontrolled.pilot.skill.piloting].max / 3']/@exact">[@this.assignedcontrolled.commander.tradenpc.skill.management, @this.ship.commander.pilot.skill.management, @this.assignedcontrolled.pilot.skill.piloting].max / 3</replace>
 </diff>
