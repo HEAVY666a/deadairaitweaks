@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='@$localtarget']/do_if[@value='$localtarget.isoperational and ($trouble? or (not $break? and $time_scandone? and player.age ge $time_scandone))']/do_if[@value='$localtarget.exists and this.mayattack.{$localtarget}']/do_elseif[@value='$localtarget.isclass.station']/set_value[@name='$table_factionthreatlevels.{$localtarget.owner}'][@exact='@$table_factionthreatlevels.{$localtarget.owner} + 10']/@exact">@$table_factionthreatlevels.{$localtarget.owner} + 46</replace>
+  <remove sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='@$localtarget']/do_if[@value='$localtarget.isoperational and ($trouble? or (not $break? and $time_scandone? and player.age ge $time_scandone))']/do_if[@value='$localtarget.exists and this.mayattack.{$localtarget}']/do_elseif[@value='$localtarget.isclass.station']/set_value[@name='$table_factionthreatlevels.{$localtarget.owner}'][@exact='@$table_factionthreatlevels.{$localtarget.owner} + 46']/@chance"/>
+</diff>
