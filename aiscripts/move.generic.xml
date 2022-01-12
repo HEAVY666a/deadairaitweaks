@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
   <remove sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='this.sector != $targetsector or (this.zone != $targetzone and (not @$endzone or this.zone != $endzone) and ($endintargetzone or @$targetzone.isclass.highway or this.ship.bboxdistanceto.[$positionspace, $position, $destination] gt 10km))']/do_if[@value='$intersector? and not @this.zone.isclass.highway and (@$waitforsubordinates or $waitforatgate or this.assignedcontrolled.iscapitalship)']/do_if[@value='not $waitforsubordinates? and not $waitforatgate.isoperational and not this.zone.isclass.highway']"/>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='this.sector != $targetsector or (this.zone != $targetzone and (not @$endzone or this.zone != $endzone) and ($endintargetzone or @$targetzone.isclass.highway or this.ship.bboxdistanceto.[$positionspace, $position, $destination] gt 10km))']/do_else/wait[@max='(not $bigship) * (5.1 - (this.ship.pilot.skill.piloting / 3))s']/@max">(not $bigship) * 0.1s</replace>
   <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='not @$rotation']/@value">true</replace>
   <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='true']/comment()[1]">
     <do_if value="not @$rotation">

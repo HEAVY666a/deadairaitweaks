@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$ToleranceWeapon1'][@exact='7.0deg']/@exact">4.0deg</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$ToleranceWeapon2'][@exact='5.0deg']/@exact">4.0deg</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$MinGainDistance'][@exact='700m']/@name">$MaxGainDistance</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$MaxGainDistance'][@exact='700m']/@exact">this.ship.maxcombatrange.all</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$MaxGainDistance'][@exact='1400m']/@name">$MinGainDistance</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$MinGainDistance'][@exact='1400m']/@exact">$MaxGainDistance * 0.5</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$delaymissiles'][@min='player.age + 10s * (6 - (this.skill.piloting / 3))'][@max='player.age + 20s * (6 - (this.skill.piloting / 3))']/@min">player.age + 5s</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/set_value[@name='$delaymissiles'][@min='player.age + 5s'][@max='player.age + 20s * (6 - (this.skill.piloting / 3))']/@max">player.age + 10s</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/do_while[@value='$target.isoperational']/do_if[@value='$target.isoperational'][1]/do_if[@value='not this.ship.defencenpc']/do_if[@value='not $target.isclass.ship_xs and ((not this.ship.dps.lasers.all and this.ship.dps.missiles.all) or (this.ship.dps.missiles.all gt 0 and player.age gt $delaymissiles))']/set_value[@name='$delaymissiles'][@min='player.age + 10s * (6 - (this.skill.piloting / 3))'][@max='player.age + 15s * (6 - (this.skill.piloting / 3))']/@min">player.age + 5s</replace>
+  <replace sel="/aiscript/attention[@min='visible']/actions/do_while[@value='$target.isoperational']/do_if[@value='$target.isoperational'][1]/do_if[@value='not this.ship.defencenpc']/do_if[@value='not $target.isclass.ship_xs and ((not this.ship.dps.lasers.all and this.ship.dps.missiles.all) or (this.ship.dps.missiles.all gt 0 and player.age gt $delaymissiles))']/set_value[@name='$delaymissiles'][@min='player.age + 5s'][@max='player.age + 15s * (6 - (this.skill.piloting / 3))']/@max">player.age + 10s</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/set_value[@name='$ToleranceWeapon1'][@exact='7.0deg']/@exact">4.0deg</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/set_value[@name='$ToleranceWeapon2'][@exact='5.0deg']/@exact">4.0deg</replace>
+</diff>

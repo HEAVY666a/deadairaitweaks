@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/wait[@exact='[((100 - this.assignedcontrolled.combinedskill) / 400)s, 1ms].max']/@exact">[1ms, 2ms].random</replace>
+</diff>

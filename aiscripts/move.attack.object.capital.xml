@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/patch[@sinceversion='11']/do_if[@value='not @$frontweapon']/@chance">100</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='not @$frontweapon']/@chance">100</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='not $issmall']/do_if[@value='$frontweapon?']/do_elseif[@value='$distance le $movethreshold_max and $distance ge $movethreshold_min']/do_if[@value='not ($isstation or $frontweapon?)']/@chance">100</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='(@$lastquadranttupdate lt player.age) and not @$frontweapon']/@chance">100</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='(@$lastquadranttupdate lt player.age) and not @$frontweapon']/do_any/set_value[@name='$weakquadrant'][@exact='$weakquadrants.random']/@weight">0</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='(@$lastquadranttupdate lt player.age) and not @$frontweapon']/do_any/set_value[@name='$weakquadrant'][@exact='$weakquadrants.{1}']/@weight">100</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='not $boost? and $allowboost and ($combinedskill ge 80)']/@value">not $boost? and $allowboost</replace>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='$target.canbeattacked and this.ship.defencenpc.exists']/do_if[@value='not $boost? and $allowboost']/@chance">100</replace>
+</diff>
